@@ -1,0 +1,34 @@
+
+.title {
+    font-size: 37px;
+    font-weight: bold;
+    padding: 100px 0 10px 500px;
+}
+.footer {
+    font-size: 37px;
+    font-weight: bold;
+    padding: 10px 0 14px 580px;
+    color: darkred;
+}
+
+.form-box label{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 2vh 0;
+}
+
+.form-box input, textarea{
+    isplay: block;
+    width: 85%;
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px 8px;
+    margin: 0px 90px;
+    text-align: center;
+}
+
+.form-box textarea{
+    height: 15vh;
+}
