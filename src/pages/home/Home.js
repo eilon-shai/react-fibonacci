@@ -20,14 +20,22 @@ const Home = () => {
             setRes("max number supported is " + MAX);
         }
         else {
-            const api = 'https://main.d3m0iqt5fejij.amplifyapp.com/';
-            const data = { "number" : num };
+            const api = 'https://dwkzo2poo9.execute-api.us-east-2.amazonaws.com/Prod/hello';
+            const data = {
+                "body": "{\"number\":" + Number(num) + "}"
+            }
             axios
-                .post(api, {"body" : data})
+                .post(api, data)
                 .then((response) => {
-                    setRes(response.data);
+                    try {
+                        setRes(Number(response.data.body).toLocaleString('fullwide', { useGrouping: false }));
+                    } catch (e) {
+                        console.log(e)
+                        setRes("internal error");
+                    }
                 })
                 .catch((error) => {
+                    console.log(error)
                     setRes("internal error");
                 });
         }
