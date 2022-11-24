@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Card, Container} from "react-bootstrap";
+import axios from "axios";
 
 
 const Home = () => {
@@ -19,7 +20,16 @@ const Home = () => {
             setRes("max number supported is " + MAX);
         }
         else {
-            setRes("1000");
+            const api = 'https://main.d3m0iqt5fejij.amplifyapp.com/';
+            const data = { "number" : num };
+            axios
+                .post(api, {"body" : data})
+                .then((response) => {
+                    setRes(response.data);
+                })
+                .catch((error) => {
+                    setRes("internal error");
+                });
         }
     }
 
