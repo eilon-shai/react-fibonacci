@@ -44,7 +44,7 @@ const Home = () => {
     return (
         <div>
             <Container>
-                <div className="title">Fibonacci calculator</div>
+                <div className="title">Fibonacci calculator v2</div>
                 <Card className="form-box">
                     <div className="field1">
                         <label>select a number:</label>
